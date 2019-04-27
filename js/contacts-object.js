@@ -63,10 +63,17 @@ contacts.makeTabClickable = function(){
 contacts.createContactsArray = function(json) {
     this.contactsList = json;
     var contacts = json.results;
-    var contactsData = [];
+    var contactsData = {};
     $.each(contacts, function(index, value) {
         contactsData[value.name.last.charAt(0).toLowerCase()] = contactsData[value.name.last.charAt(0).toLowerCase()] || [];
         contactsData[value.name.last.charAt(0).toLowerCase()].push(this);
+    });
+
+    $.each(contactsData, function(index, value) {
+        contactsData[index] = value.sort(function (a, b) {
+            var x = a.name.last; var y = b.name.last;
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
     });
     this.contacts = contactsData;
     this.createTabHeaders();
