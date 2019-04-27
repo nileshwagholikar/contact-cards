@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>:: Contact List ::</title>
+    <meta name="description" content="List of contacts generated from API data">
+    <meta name="author" content="Nilesh Wagholikar">
+    <link rel="stylesheet" href="css/contacts.css?v=1.0">
+</head>
+<body>
+<section>
+    <header></header>
+    <main></main>
+</section>
+<script src="js/jquery-3.4.0.min.js"></script>
+<script>
+    // Disable client cache
+    $.ajaxSetup({
+        cache: true
+    });
+
+    // load external JS file
+    var loadObject = $.getScript("js/contacts-object.js");
+    loadObject.done(function () {
+        $.getScript("js/contacts.js");
+    });
+</script>
+</body>
+</html>

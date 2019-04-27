@@ -1,0 +1,198 @@
+*, html {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Verdana;
+    font-size: 14pt;
+}
+
+body {
+    padding: 15px;
+    margin: 0;
+}
+
+h3 {
+    text-align: center;
+    padding: 20px;
+    font-size: 18pt;
+    font-weight: normal;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+}
+
+.preloader div {
+    margin: auto;
+    color: #FFF;
+    font-size: 22pt;
+}
+
+.hidden {
+    display: none;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+section header ul {
+    display: flex;
+    padding: 0;
+}
+
+section header li {
+    flex: 1;
+    font-size: 18pt;
+    text-align: center;
+    border: 1px solid #444444;
+    border-radius: 5px 5px 0 0;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+    background-color: #DDD;
+    position: relative;
+}
+
+section header li:hover {
+    background-color: #EEE;
+}
+
+section header li.active {
+    pointer-events: none;
+    border-bottom-color: #EEE;
+    color: #c00;
+    background-image: linear-gradient(to top, #EEE 0%, #EEE 70%, #CCC 100%);
+}
+
+section header li.disabled {
+    pointer-events: none;
+    color: #999;
+}
+
+section header li span {
+    position: absolute;
+    font-size: 9pt;
+    right: 5px;
+    top: 5px;
+}
+
+section main {
+    border: 1px solid #444444;
+    border-radius: 0 0 5px 5px;
+    padding: 15px;
+    margin-top: -1px;
+    background-image: linear-gradient(to bottom, #EEE 0%, #EEE 70%, #CCC 100%);
+}
+
+section main ul {
+    columns: 2;
+    column-gap: 30px;
+    padding-right: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    section main ul {
+        columns: 1;
+        column-gap: 30px;
+    }
+}
+
+section main li {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 5px;
+    border-bottom: 1px dashed #CCC;
+    color: #333;
+}
+
+.contactInfoBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9997;
+}
+
+.contactInfo {
+    position: absolute;
+    z-index: 9998;
+    height: 350px;
+    width: 500px;
+    border: 1px solid #a0a0a0;
+    background-image: linear-gradient(to bottom, #CCC 0%, #EEE 10%, #EEE 90%, #CCC 100%);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.contactInfo .loginInfo {
+    background-color: #cc0000;
+    color: #FFF;
+    padding: 10px;
+    margin: 0;
+    width: 180px;
+    height: 30px;
+    font-size: 10pt;
+    line-height: 12pt;
+    position: absolute;
+    transform: rotate(90deg);
+    left: -60px;
+    top: 75px;
+}
+
+.contactInfo .topDiv {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    color: #999;
+    font-size: 18pt;
+}
+
+.contactInfo .topDiv img {
+    vertical-align: middle;
+    margin-right: 20px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px 0px #666;
+}
+
+.contactInfo .infoDiv {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.contactInfo .infoDiv uL {
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.contactInfo .infoDiv li {
+    padding-right: 30px;
+    line-height: 16pt;
+    font-size: 11pt;
+}
+
+.contactInfo .btn-Close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
