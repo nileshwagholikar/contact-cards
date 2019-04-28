@@ -97,20 +97,13 @@ contacts.openTab = function(tabData) {
 contacts.makeContactClickable = function(){
     $(this.tabElement + ' ul.contactList li').click(function(){
         var contactInfo = $('.contactInfo');
+        contactInfo.html('');
         var parent = $(this);
-        var left, top;
-        var windowWidth = $(window).width();
+        var left = 30;
+        var top = parent.offset().top + 40;
 
-        if(windowWidth > 600) {
-            if (parent.offset().left < (windowWidth / 2)) {
-                left = (windowWidth / 2) + 8;
-            } else {
-                left = (windowWidth / 2) - (contactInfo.width() + 16);
-            }
-            top = parent.offset().top;
-        } else {
-            left = 30;
-            top = parent.offset().top + 40;
+        if($(window).width() > 600) {
+            left = parent.offset().left;
         }
 
         contactInfo.css({
@@ -140,7 +133,7 @@ contacts.makeContactClickable = function(){
         infoDiv += '</ul>';
         infoDiv += '</div></div>';
 
-        contactInfo.html(loginDiv);
+        contactInfo.append(loginDiv);
         contactInfo.append(topDiv);
         contactInfo.append(infoDiv);
         contactInfo.append('<div class="btn-Close">X</div>');
